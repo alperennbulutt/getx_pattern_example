@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_pattern/app/controller/details/details_controller.dart';
-import 'package:getx_pattern/app/ui/android/widgets/button_widget.dart';
+import 'package:getx_pattern/src/controller/details/details_controller.dart';
+import 'package:getx_pattern/src/ui/widgets/button_widget.dart';
 
 class CardBottomButtonsWidget extends StatelessWidget {
   @override

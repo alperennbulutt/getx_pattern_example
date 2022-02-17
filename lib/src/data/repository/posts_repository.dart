@@ -1,4 +1,4 @@
-import 'package:getx_pattern/app/data/provider/api.dart';
+import 'package:getx_pattern/src/data/provider/api.dart';
 import 'package:meta/meta.dart';
 
 class MyRepository {
@@ -13,7 +13,4 @@ class MyRepository {
   getId(id) {
     return apiClient.getId(id);
   }
-
-
-
 }

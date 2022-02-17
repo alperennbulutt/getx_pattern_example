@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_pattern/app/bindings/home_binding.dart';
-import 'package:getx_pattern/app/routes/app_pages.dart';
-import 'package:getx_pattern/app/translations/app_translations.dart';
+import 'package:getx_pattern/src/bindings/home_binding.dart';
+import 'package:getx_pattern/src/routes/app_pages.dart';
+import 'package:getx_pattern/src/translations/app_translations.dart';
 
-import 'app/ui/android/home/home_page.dart';
-import 'app/ui/theme/app_theme.dart';
+import 'src/ui/theme/app_theme.dart';
 
 void main() {
   runApp(GetMaterialApp(
