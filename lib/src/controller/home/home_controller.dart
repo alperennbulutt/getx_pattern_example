@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:getx_pattern/src/data/model/model.dart';
+import 'package:getx_pattern/src/data/model/photos_model.dart';
 
 import 'package:getx_pattern/src/data/repository/posts_repository.dart';
 import 'package:getx_pattern/src/routes/app_pages.dart';
@@ -9,6 +10,18 @@ class HomeController extends GetxController {
   final MyRepository repository;
   HomeController({@required this.repository}) : assert(repository != null);
 
+// photos -----------------------------------------------------------
+  final _photosList = List<PhotosModel>().obs;
+  get photosList => this._photosList.value;
+  set photosList(value) => this._photosList.value = value;
+
+  final _photosModel = PhotosModel().obs;
+  get postPhotos => this._photosModel.value;
+  set postPhotos(value) => this._photosModel.value = value;
+
+// -----------------------------------------------------------------
+
+// postModel --------------------------------------------------------
   final _postsList = List<MyModel>().obs;
   get postList => this._postsList.value;
   set postList(value) => this._postsList.value = value;
@@ -17,9 +30,17 @@ class HomeController extends GetxController {
   get post => this._post.value;
   set post(value) => this._post.value = value;
 
+  // ---------------------------------------------------------------
+
   getAll() {
     repository.getAll().then((data) {
       this.postList = data;
+    });
+  }
+
+  getPhotos() {
+    repository.getPhotos().then((data) {
+      this.photosList = data;
     });
   }
 
@@ -28,6 +49,12 @@ class HomeController extends GetxController {
   excluir(id) {}
   //dismissible
   editar() {}
+
+  // route second page
+  goToSecondPage() {
+    Get.toNamed(Routes.SECONDPAGE);
+  }
+
   details(post) {
     this.post = post;
     Get.toNamed(Routes.DETAILS);

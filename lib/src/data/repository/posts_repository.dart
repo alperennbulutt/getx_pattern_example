@@ -10,6 +10,10 @@ class MyRepository {
     return apiClient.getAll();
   }
 
+  getPhotos() {
+    return apiClient.getPhotos();
+  }
+
   getId(id) {
     return apiClient.getId(id);
   }
