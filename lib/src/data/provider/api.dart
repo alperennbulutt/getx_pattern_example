@@ -1,13 +1,9 @@
 import 'dart:convert';
+import 'package:getx_pattern/src/constants/endpoints.dart';
 import 'package:getx_pattern/src/data/model/model.dart';
 import 'package:getx_pattern/src/data/model/photos_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-
-const baseUrl = 'https://jsonplaceholder.typicode.com/';
-
-const posts = "posts/";
-const photos = "photos/";
 
 class MyApiClient {
   final http.Client httpClient;
@@ -15,7 +11,7 @@ class MyApiClient {
 
   getAll() async {
     try {
-      var response = await httpClient.get(baseUrl + posts);
+      var response = await httpClient.get(EndPoint.base_url + EndPoint.posts);
       if (response.statusCode == 200) {
         Iterable jsonResponse = json.decode(response.body);
         List<MyModel> listMyModel =
@@ -29,7 +25,7 @@ class MyApiClient {
   // get photos from api
   getPhotos() async {
     try {
-      var response = await httpClient.get(baseUrl + photos);
+      var response = await httpClient.get(EndPoint.base_url + EndPoint.photos);
       if (response.statusCode == 200) {
         Iterable jsonResponse = json.decode(response.body);
         List<PhotosModel> listMyModel =

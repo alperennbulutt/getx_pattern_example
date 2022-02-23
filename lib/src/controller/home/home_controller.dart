@@ -22,6 +22,7 @@ class HomeController extends GetxController {
 // -----------------------------------------------------------------
 
 // postModel --------------------------------------------------------
+  // ignore: deprecated_member_use
   final _postsList = List<MyModel>().obs;
   get postList => this._postsList.value;
   set postList(value) => this._postsList.value = value;
@@ -43,12 +44,6 @@ class HomeController extends GetxController {
       this.photosList = data;
     });
   }
-
-  adicionar(post) {}
-  //dismissible
-  excluir(id) {}
-  //dismissible
-  editar() {}
 
   // route second page
   goToSecondPage() {
